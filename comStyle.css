@@ -56,7 +56,7 @@ body::before {
 }
 
 .page-center {
-    background-color: #000000e0;
+    background-color: #000000ad;
     display: flex;
     flex-direction: column;
     align-items: center;
