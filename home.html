@@ -1,96 +1,349 @@
-<!DOCTYPE html>
-<html lang="en">
+body {
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    margin: 0;
+    background-image: url(images/comm-background.png);
+    background-size: contain;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MSTYRiceballs Info</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="homeStyle.css">
-    <!-- FontAwesome (Replace with actual kit if needed) -->
-    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
 
-</head>
+.pfp-img {
+    width: 200px;
+}
 
-<body>
-    <div class="page-center">
-        <!-- Navigation Bar -->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <img src="images/cat-icon.png" class="cat-icon">
-                <a class="navbar-brand" href="index.html"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="commission.html">Commission</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="gallery.html">Gallery</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+.page-center {
+    width: 70%;
+    min-height: 80vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: width 0.3s ease, padding 0.3s ease;
+}
 
-        <!-- Intro Section -->
-        <section id="intro-section" style="margin-top: 60px;">
-            <div class="container text-center">
-                <h1>Hi hi!</h1>
-                <h3>Freelance Digital Artist</h3>
-                
-                <img src="images/pfp.png" class="pfp-img">
-                <hr>
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .page-center {
+        width: 100%;
+        min-height: 100vh;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.8); /* Ensure consistent opacity */
+    }
+}
 
-                <div class="link-contacts">
-                    <h3>
-                        <a href="https://www.instagram.com/mstyricebals/"> <i class="bi bi-instagram"></i></a>
-                       
-                        <a href="https://github.com/inwang123"><i class="bi bi-github"></i></a>
-                        <a href="https://www.tiktok.com/@mstyricebals"><img src="images/tiktok-icon.png" class="tiktok-icon"></a>
-                    </h3>
-                </div>
-    
-                <h5>Current Commission Status: Closed</h5>
+/* Even smaller screens (for phones) */
+@media (max-width: 576px) {
+    .page-center {
+        width: 100%;
+        min-height: 100vh;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.8); /* Ensure consistent opacity */
+    }
+}
+h1,
+h3,
+h6 {
+    color: #ffffff;
+}
 
-                <a href="commission.html"><button>Commissions</button></a>
-                <a href="gallery.html"> <button>Gallery</button></a>
-               
-                <button id="openModalButton">Contact</button>
+.link-contacts {
+    text-align: center;
+    font-size: 24px;
+    margin: 0 10px;
+    color: #ffffff;
+}
 
-                <!-- Modal -->
-                <div id="imageModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <img class="modal-image" id="modalImage" src="images/contacts-img.png" alt="Background Examples">
-                    </div>
-                </div>
-                
-            </div>
-        </section>
-        <div>
-            <!-- Bootstrap JS -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-whsNJOAiYJSLcOY6gFtXNYBefAN0MfnZt0fFlYdvb3RWYFd24HieByB2zW1niM1y"
-                crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-            
-            <!-- Corrected script link -->
-            <script src="homeScript.js"></script>
+.link-contacts a:nth-child(2) {
+    margin-right: 8px;
+}
 
-        </div>
-</body>
+.link-contacts a img.tiktok-icon {
+    transition: filter 0 ease;
+}
 
-</html>
+.link-contacts a:hover img.tiktok-icon {
+    filter: brightness(0.6) sepia(1) hue-rotate(200deg) saturate(500%);
+}
+
+.link-contacts a i {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #ffffff;
+    transition: color 0 ease;
+}
+
+.link-contacts a:hover i {
+    color: rgb(121, 136, 187);
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: rgb(71, 89, 109);
+}
+
+i:hover {
+    color: rgb(65, 137, 219);
+}
+
+.navbar {
+    background-color: rgba(248, 249, 250, 0.8);
+}
+
+.navbar-nav .nav-link {
+    color: #000000;
+}
+
+button {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 5vh;
+}
+
+.cat-icon {
+    max-height: 50px;
+    height: auto;
+    width: auto;
+}
+
+.tiktok-icon {
+    height: 30px;
+    vertical-align: middle;
+    margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+    .cat-icon {
+        max-height: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cat-icon {
+        max-height: 50px;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #fff;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+h1,
+h3,
+h6 {
+    color: #ffffff;
+}
+
+.link-contacts {
+    text-align: center;
+    font-size: 24px;
+    margin: 0 10px;
+    color: #ffffff;
+}
+
+.link-contacts a:nth-child(2) {
+    margin-right: 8px;
+}
+
+.link-contacts a img.tiktok-icon {
+    transition: filter 0 ease;
+}
+
+.link-contacts a:hover img.tiktok-icon {
+    filter: brightness(0.6) sepia(1) hue-rotate(200deg) saturate(500%);
+}
+
+.link-contacts a i {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #ffffff;
+    transition: color 0 ease;
+}
+
+.link-contacts a:hover i {
+    color: rgb(121, 136, 187);
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: rgb(71, 89, 109);
+}
+
+i:hover {
+    color: rgb(65, 137, 219);
+}
+
+.navbar {
+    background-color: rgba(248, 249, 250, 0.8);
+}
+
+.navbar-nav .nav-link {
+    color: #000000;
+}
+
+button {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 5vh;
+}
+
+.cat-icon {
+    max-height: 50px;
+    height: auto;
+    width: auto;
+}
+
+.tiktok-icon {
+    height: 30px;
+    vertical-align: middle;
+    margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+    .cat-icon {
+        max-height: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cat-icon {
+        max-height: 50px;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #fff;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
