@@ -38,8 +38,43 @@ body::before {
     padding: 40px;
     z-index: 1;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: width 0.3s ease, padding 0.3s ease;
 }
 
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .page-center {
+        width: 100%;
+        min-height: 100vh;
+        padding: 20px; /* Reduce padding for small screens */
+    }
+
+    .pfp-img {
+        width: 150px; /* Reduce the profile image size on small screens */
+    }
+}
+
+/* Even smaller screens (for phones) */
+@media (max-width: 576px) {
+    .page-center {
+        width: 100%;
+        min-height: 100vh;
+        padding: 10px; /* Further reduce padding for extra small screens */
+    }
+
+    .pfp-img {
+        width: 120px; /* Further reduce the image size */
+    }
+
+    h1, h3, h6 {
+        font-size: 1.2rem; /* Adjust text size for better readability */
+    }
+
+    button {
+        font-size: 14px; /* Reduce button text size */
+        padding: 8px 16px; /* Adjust button padding */
+    }
+}
 h1,
 h3,
 h6 {
