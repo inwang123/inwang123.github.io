@@ -1,0 +1,185 @@
+body {
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    margin: 0;
+    background-image: url(images/comm-background.png);
+    background-size: contain;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.pfp-img {
+    width: 200px;
+}
+
+.page-center {
+    width: 70%;
+    min-height: 80vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1,
+h3,
+h6 {
+    color: #ffffff;
+}
+
+.link-contacts {
+    text-align: center;
+    font-size: 24px;
+    margin: 0 10px;
+    color: #ffffff;
+}
+
+.link-contacts a:nth-child(2) {
+    margin-right: 8px;
+}
+
+.link-contacts a img.tiktok-icon {
+    transition: filter 0 ease;
+}
+
+.link-contacts a:hover img.tiktok-icon {
+    filter: brightness(0.6) sepia(1) hue-rotate(200deg) saturate(500%);
+}
+
+.link-contacts a i {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #ffffff;
+    transition: color 0 ease;
+}
+
+.link-contacts a:hover i {
+    color: rgb(121, 136, 187);
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: rgb(71, 89, 109);
+}
+
+i:hover {
+    color: rgb(65, 137, 219);
+}
+
+.navbar {
+    background-color: rgba(248, 249, 250, 0.8);
+}
+
+.navbar-nav .nav-link {
+    color: #000000;
+}
+
+button {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 5vh;
+}
+
+.cat-icon {
+    max-height: 50px;
+    height: auto;
+    width: auto;
+}
+
+.tiktok-icon {
+    height: 30px;
+    vertical-align: middle;
+    margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+    .cat-icon {
+        max-height: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cat-icon {
+        max-height: 50px;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #fff;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
