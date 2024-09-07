@@ -6,4 +6,4 @@ Nice to see you here lad
  ( | | )
 (__d b__)
 
-Please don't repost my art without credit
+Please don't repost my art or copy the entire code without credit 
