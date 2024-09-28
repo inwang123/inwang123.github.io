@@ -74,7 +74,7 @@ h5 {
     justify-items: center;
 }
 
-/* Media queries for smaller screens */
+/* for smaller screens */
 @media (max-width: 1024px) {
     .gallery {
         grid-template-columns: repeat(4, 1fr);
