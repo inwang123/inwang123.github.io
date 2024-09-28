@@ -41,23 +41,23 @@ body::before {
     transition: width 0.3s ease, padding 0.3s ease;
 }
 
-/* Adjust for smaller screens */
+/* small screens */
 @media (max-width: 768px) {
     .page-center {
         width: 100%;
         min-height: 100vh;
         padding: 20px;
-        background-color: rgba(0, 0, 0, 0.8); /* Ensure consistent opacity */
+        background-color: rgba(0, 0, 0, 0.8); 
     }
 }
 
-/* Even smaller screens (for phones) */
+/*smaller screens (for phones) */
 @media (max-width: 576px) {
     .page-center {
         width: 100%;
         min-height: 100vh;
         padding: 10px;
-        background-color: rgba(0, 0, 0, 0.8); /* Ensure consistent opacity */
+        background-color: rgba(0, 0, 0, 0.8); 
     }
 }
 h1,
