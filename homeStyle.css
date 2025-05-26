@@ -1,7 +1,7 @@
 body {
     font-family: 'Courier New', Courier, monospace, sans-serif;
     margin: 0;
-    background-image: url(images/comm-background.png);
+    background-image: url(img/comm-background.webp);
     background-size: contain;
     background-attachment: fixed;
     position: relative;
