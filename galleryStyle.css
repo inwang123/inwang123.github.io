@@ -12,7 +12,7 @@ hr {
 body {
     font-family: 'Courier New', Courier, monospace, sans-serif;
     margin: 0;
-    background-image: url(img/comm-background.webp);
+    background-image: url(images/comm-background.png);
     background-size: contain;
     background-attachment: fixed;
     display: flex;
@@ -106,18 +106,51 @@ h5 {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.3s ease, filter 0.3s ease;
     object-fit: cover;
     filter: brightness(0.9);
+    transition: filter 0.2s ease;
+    will-change: filter;
+}
+
+.gallery-item {
+    transition: transform 0.2s ease;
+    will-change: transform;
 }
 
 .gallery-item:hover img {
     filter: brightness(1);
-    object-fit: cover;
-    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .gallery-item:hover {
-    transform: scale(1.1);
-    z-index: 1;
+    transform: scale(1.05);
+}
+
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 4px solid white;
+    border-radius: 8px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
 }
